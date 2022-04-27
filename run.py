@@ -35,11 +35,12 @@ def validate_data(values):
     or if there are not exactly 6 values. 
     """
     try:
+        [int(value) for value in value]
         if len(values) != 6:
             raise ValueError(
-                f"Exactly 6 values required, you provided (len(values))"
+                f"Exactly 6 values required, you provided {len(values)}"
             )
     except ValueError is e:
-        print(f"Invalid data: [e], please try again.")
+        print(f"Invalid data: {e}, please try again.\n")
 
 get_sales_data()
